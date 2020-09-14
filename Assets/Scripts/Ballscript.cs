@@ -29,7 +29,11 @@ public class Ballscript : MonoBehaviour
         Debug.Log(collision.gameObject.tag);
       
           Debug.Log("bbb");
-          Destroy(gameObject);
+          if(collision.gameObject.CompareTag ("Paddle"))
+          {
+            Destroy(gameObject);
+          }
+
           collision.gameObject.transform.localScale -= new Vector3(Random.Range(0.2f,1.0f),0f,0f);
           if(collision.gameObject.transform.localScale.x < 1.0f)
           {
